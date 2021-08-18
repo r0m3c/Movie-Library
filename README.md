@@ -1,4 +1,4 @@
-**Movie Library**
+#Movie Library
 
 Movie Library is an IOS application where a user can store any movie they want to watch in there app. Also, the user will have the options to look at what current movies are showing on theatres, and will have access to any reviews people may have written about the movie, and will see which actors were a part of the film.
 

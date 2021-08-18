@@ -4,8 +4,7 @@
 
 Movie Library is an IOS application where a user can store any movie they want to watch in there app. Also, the user will have the options to look at what current movies are showing on theatres, and will have access to any reviews people may have written about the movie, and will see which actors were a part of the film.
 
-**Features**
-Below are the following features of my app:
+**Below are the following features of my app:**
 
 1) User can add a new movie they have recently watched to the app, with an image which can be chosen from their phone's photo library. While doing this, the user can enter information like the name of the movie, the year it was released, the date it was added, language of film, director name, and the rating you give this movie. You can also see the custam app screen logo that I made and in the launchscreen as well.
 

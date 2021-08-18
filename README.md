@@ -70,3 +70,12 @@ Below are the following features of my app:
 ---
 
 ![](https://i.imgur.com/UvjaLTa.gif)
+
+---
+
+# Built With:
+1) Swift (SwiftUI)
+2) The Movie Database API: [https://developers.themoviedb.org/3/getting-started/introduction]()
+
+# Author:
+-Leandro Gamarra (r0m3c)

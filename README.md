@@ -55,7 +55,7 @@ Below are the following features of my app:
 
 ---
 
-![](https://i.imgur.com/Dp360nL.gif)
+![](https://i.imgur.com/Ib2jgVK.gif)
 
 -You can also search for any movie
 

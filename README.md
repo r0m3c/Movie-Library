@@ -69,4 +69,4 @@ Below are the following features of my app:
 
 ---
 
-![](https://i.imgur.com/N36wy1f.gif)
+![](https://i.imgur.com/UvjaLTa.gif)

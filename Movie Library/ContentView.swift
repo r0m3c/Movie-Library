@@ -15,23 +15,40 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    @State var currentTab: Tab = .Home
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
+    @Namespace var animation
 
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        ZStack (alignment: .bottom){
+            TabView(selection: $currentTab) {
+                Movie_List_View()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.black.opacity(0.04).ignoresSafeArea())
+                    .tag(Tab.Home)
+                
+        
+                HomeView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.black.opacity(0.04).ignoresSafeArea())
+                    .tag(Tab.moreMovies)
+                
+                DiscoverView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.black.opacity(0.04).ignoresSafeArea())
+                    .tag(Tab.Liked)
             }
-            .onDelete(perform: deleteItems)
+            
+            CustomTabBar(animation: animation,currentTab: $currentTab)
+                .background(Color.black)
+            
         }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
-            }
-        }
+        .edgesIgnoringSafeArea(.bottom)
     }
 
     private func addItem() {
@@ -76,5 +93,12 @@ private let itemFormatter: DateFormatter = {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(SettingStore())
     }
+}
+
+enum Tab:String, CaseIterable {
+    case Home = "house.fill"
+    case moreMovies = "film"
+    case Liked = "icloud"
 }
